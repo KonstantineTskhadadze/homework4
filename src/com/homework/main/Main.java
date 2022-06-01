@@ -25,14 +25,14 @@ public class Main {
 			com.homework.rectangle.Rectangle[] list = new com.homework.rectangle.Rectangle[size];
 			for(int i = 0; i < size; i++) 
 				list[i] = new com.homework.rectangle.Rectangle(25 * i, 10 * i);
-			System.out.println(com.homework.rectangle.Rectangle.max(list));
+			com.homework.rectangle.Rectangle.max(list);
 		}
 		{
 			final int size = 10;
 			com.homework.another.rectangle.Rectangle[] list = new com.homework.another.rectangle.Rectangle[size];
 			for(int i = 0; i < size; i++) 
 				list[i] = new com.homework.another.rectangle.Rectangle(25 * i, 10 * i);
-			System.out.println(com.homework.another.rectangle.Rectangle.max(list));
+			com.homework.another.rectangle.Rectangle.max(list);
 		}
 	}
 }

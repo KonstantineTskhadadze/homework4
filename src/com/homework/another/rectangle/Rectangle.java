@@ -46,17 +46,17 @@ public class Rectangle implements IRectangle {
 		return 2 * (width + height);
 	}
 
-	public static int max(Rectangle[] array) {
+	public static Rectangle max(Rectangle[] array) {
 		final int size = array.length;
 		double max = 0;
-		int index = 0;
+		Rectangle result = array[0];
 		for(int i = 0; i < size; i++) {
 			double area = array[i].getArea();
 			if(area > max) {
 				max = area;
-				index = i;
+				result = array[i];
 			}
 		}
-		return index;
+		return result;
 	}
 }
