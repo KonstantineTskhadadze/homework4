@@ -1,8 +1,8 @@
 package com.homework.rectangle;
 
 public class Rectangle implements IRectangle {
-	final private double width;
-	final private double height;
+	private double width;
+	private double height;
 	final private static double MAX_WIDTH;
 	final private static double MAX_HEIGHT;
 	final private static double DEFAULT;
@@ -26,25 +26,36 @@ public class Rectangle implements IRectangle {
 		this.height = height < MAX_HEIGHT ? height : MAX_HEIGHT;
 	}
 
-	@Override
 	public double getArea() {
 		// TODO Auto-generated method stub
 		return width * height;
 	}
 
-	@Override
 	public double getPerimeter() {
 		// TODO Auto-generated method stub
 		return 2 * (width + height);
 	}
 
 	@Override
-	public int compareTo(IRectangle rectangle) {
+	public int compareTo(Rectangle rectangle) {
 		// TODO Auto-generated method stub
 		return this.getArea() > rectangle.getArea() ? 1
 				: this.getArea() < rectangle.getArea() ? -1
 				: 0;
 	}
 
+	public static int max(Rectangle[] array) {
+		final int size = array.length;
+		double max = 0;
+		int index = 0;
+		for(int i = 0; i < size; i++) {
+			double area = array[i].getArea();
+			if(area > max) {
+				max = area;
+				index = i;
+			}
+		}
+		return index;
+	}
 	
 }
